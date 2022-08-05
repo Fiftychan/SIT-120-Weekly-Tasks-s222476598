@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The length property returns the length of a string:</p>
+
+<p id="1"></p>
+
+<script>
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("1").innerHTML = text.length;
+</script>
+
+<p>Basic string</p>
+
+<p id="2"></p>
+
+<script>
+let phrase = "John Doe";  // String written inside quotes
+document.getElementById("2").innerHTML = phrase;
+</script>
+
+<p>Strings are written inside quotes. You can use single or double quotes:</p>
+
+<p id="3"></p>
+
+<script>
+let carName1 = "Volvo XC60"; // Double quotes
+let carName2 = 'Volvo XC60'; // Single quotes
+
+document.getElementById("3").innerHTML =
+carName1 + " " + carName2; 
+</script>
+
+<p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string.</p>
+
+<p id="4"></p>
+
+<script>
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"'; 
+
+document.getElementById("4").innerHTML =
+answer1 + "<br>" + answer2 + "<br>" + answer3; 
+</script>
+
+<p>The escape sequence \" inserts a double quote in a string.</p>
+
+<p id="5"></p>
+
+<script>
+let a = "We are the so-called \"Vikings\" from the north.";
+document.getElementById("5").innerHTML = a; 
+</script>
+
+<p>I find that there are many ways to customise a string code. I also find that each string code isn't to different from each other.</p>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="6"></p>
+
+<script>
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("6").innerHTML = cars;
+</script>
+
+<h2>JavaScript Numbers</h2>
+
+<p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits:</p>
+
+<p id="7"></p>
+
+<script>
+let x = 999999999999999;
+let y = 9999999999999999;
+document.getElementById("7").innerHTML = x + "<br>" + y;
+</script>
+
+<p>The toString() method converts a number to a string.</p>
+
+<p id="8"></p>
+
+<script>
+let b = 123;
+document.getElementById("8").innerHTML =
+  b.toString() + "<br>" +
+   (123).toString() + "<br>" +
+   (100 + 23).toString();
+</script>
+
+<h2>slice()</h2>
+
+<p id="9"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1, 3);
+
+document.getElementById("9").innerHTML = citrus;
+</script>
+
+<p>The Array.splice() method adds array elements:</p>
+
+<p id="10"></p>
+
+<script>
+const food = ["Banana", "Orange", "Apple", "Mango"];
+
+// At position 2, add 2 elements: 
+food.splice(2, 0, "Lemon", "Kiwi");
+
+document.getElementById("10").innerHTML = food;
+</script>
+
+<h2>The join() Method</h2>
+
+<p id="11"></p>
+
+<script>
+const c = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = c.join(" and ");
+
+document.getElementById("11").innerHTML = fruit;
+</script>
+
+<h2>The filter() Method</h2>
+
+<p id="12"></p>
+
+<script>
+const ages = [32, 33, 16, 40];
+
+document.getElementById("12").innerHTML = ages.filter(checkAdult);
+
+function checkAdult(age)
+{
+  return age >= 18;
+}
+</script>
+
+<p>I find that there are a lot of things you can do with arrays. Currently I still don't understand the need for these arrays.</p>
+</body>
+</html>
+
