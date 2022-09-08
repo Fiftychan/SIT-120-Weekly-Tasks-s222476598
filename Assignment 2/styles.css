@@ -1,0 +1,28 @@
+h2 {
+    color:aquamarine;
+    background-color: blueviolet;
+    }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: brown;
+    }
+
+li {
+    float: left;
+    }
+      
+li a {
+    display: block;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+    background-color: burlywood;
+    }
+
+li a:hover {
+            background-color: orange;
+            }

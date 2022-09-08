@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <component-a></component-a>
+            <component-b></component-b>
+            <component-c></component-c>
+        </div>
+        <div id="app2">
+            <component-d></component-d>
+            <component-e></component-e>
+        </div>
+        <p>This wasn't as hard to implement as the previous task (form input handlings), right now with a static template, it's actually pretty easy to do.</p>
+        <p>However, I can see this being hard with an interactable component.</p>
+    </body>
+    <script>
+        Vue.component('component-a', { template: '<p>Global Component 1</p>' })
+        Vue.component('component-b', { template: '<p>Global Component 2</p>' })
+        Vue.component('component-c', { template: '<p>Global Component 3</p>' })
+
+        new Vue({ el: '#app' })
+
+        new Vue({
+            el: '#app2',
+            components: {
+                'component-d': {template: '<p>Local Component 1</p>'},
+                'component-e': {template: '<p>Local Component 2</p>'}
+            }
+        })
+    </script>
+<html>
+

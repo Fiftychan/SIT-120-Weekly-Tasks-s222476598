@@ -41,5 +41,26 @@
             }
           })
         </script>
+        <script>
+            Vue.component
+            ('button-counter', 
+            {
+                data: function () 
+                {
+                    return 
+                    {
+                    count: 0
+                    }
+                },
+                template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+            })
+        </script>
+        <div id="components-demo">
+            <button-counter></button-counter>
+        </div>
+        <script>
+            new Vue({ el: '#components-demo' })
+        </script>
+        <p>I find that there are a lot of things you can do with vue. In this particular assignment I include the JS scripts in the html file which I found to be not effective.</p>
     </body>
 </html>

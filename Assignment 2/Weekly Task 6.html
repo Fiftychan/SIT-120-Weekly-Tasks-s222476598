@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="example-1" class="demo" style="user-select: auto;">
+        <input v-model = name placeholder="Enter your name" style="user-select: auto;">
+        <input v-model = age placeholder="Enter your age" style="user-select: auto">
+        <p style="user-select: auto;">Name: {{name}} </p>
+        <p style="user-select: auto;">Age: {{age}}</p>
+    </div>
+    <script style="user-select: auto;">
+        new Vue({
+          el: '#example-1',
+          data: {
+            name: '',
+            age: ''
+          }
+        })
+    </script>
+    <p>It originally wouldn't work and I was actually a little scared because there wasn't an auto built in code for the Vue part. However I managed. </p>
+    <div id='example-2'class="demo" style="user-select: auto;">
+      <input type="checkbox" id="jack" value="Jack" v-model="data.checkedNames" style="user-select: auto;">
+      <label for="jack" style="user-select: auto;">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="data.checkedNames" style="user-select: auto;">
+      <label for="john" style="user-select: auto;">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="data.checkedNames" style="user-select: auto;">
+      <label for="mike" style="user-select: auto;">Mike</label>
+      <br style="user-select: auto;">
+      <ul style="user-select: auto;">
+        <li v-for="checkedName in data.checkedNames" style="user-select:auto;">{{checkedName}}</li>
+      </ul>
+    </div>
+    <script style="user-select: auto;">
+      new Vue({
+        el: '#example-2',
+        data: {
+          checkedNames: []
+        }
+      })
+    </script>
+    <p>If the checked name doesn't work, here is another checkbox</p>
+    <div id='example-3' class= 'demo' style="user-select: auto;">
+    <input type="checkbox" id="checkbox" v-model="checked" style="user-select: auto;">
+    <label for="checkbox" style="user-select: auto;">{{checked}}</label>
+    </div>
+    <script style="user-select: auto;">
+      const app = new Vue({
+        el: '#example-3',
+        data: {
+          checked: false
+        }
+      })
+    </script>
+    <p>The checkbox feature is a bit hard to implement. If the code is checked, there will actually be failed attempts that probably didn't work.</p>
+    <div id= "checkboxes">
+      <label>Cookies</label>
+      <input type="checkbox" value="Cookies" v-model=orders>
+      <label>Ice Cream</label>
+      <input type="checkbox" value="IceCream" v-model=orders>
+      <label>Donuts</label>
+      <input type="checkbox" value="Donuts" v-model=orders>
+    </div>
+    <p>Orders</p>
+    <ul>
+      <li v-for="order in orders">{{order}}</li>
+    </ul>
+    <script>
+      new Vue({
+        el: "#checkboxes",
+        data: {
+          orders: []
+        }
+      })
+    </script>
+</body>
+</html>
