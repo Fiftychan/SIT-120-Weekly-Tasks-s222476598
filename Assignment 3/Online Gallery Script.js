@@ -5,22 +5,37 @@ hamburgerMenu.addEventListener('click', () => wrap.classList.toggle('active'))
 
 const images = ["Example.jpg"]
 
-function getInfo(){
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var email = document.getElementById("email")
-}
-
-function checkUser(username, password){
-  var usercheck = document.getElementById("usercheck").value;
-  var passcheck = document.getElementById("passcheck").value;
-  if(usercheck == username && passcheck == password)
-  {
-    console.log(username + "is logged in!!!")
+new Vue ({
+  el: '#userinfo',
+  data: {
+    email: '',
+    username: '',
+    password: '',
+  },
+  methods:{
+    register: function (message){
+      alert(message)
+    }
   }
-}
+})
 
-function uploadIMG(){
-  var image = document.getElementById("image").value;
-  images.push(image)
-}
+new Vue ({
+  el: '#usercheck',
+  data: {
+    uname: 'Rosa',
+    pw: '12345',
+    usercheck: '',
+    passcheck: ''
+  },
+  methods:{
+    login: function(event) {
+      if (event) {
+        alert('Logged in')
+      }
+      else {
+        alert('Username / Password Incorrect')
+      }
+    }
+  }
+})
+

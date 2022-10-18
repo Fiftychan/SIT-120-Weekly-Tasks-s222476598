@@ -44,6 +44,24 @@
                     <img src="Example3.jpg" alt="Example 3">
                 </div>
             </div>
+            <div id="transition">
+                <button class="button" @click="show = !show">
+                Description
+                </button>
+                <Transition name="slide-fade">
+                <div v-if="show">
+                <div id="app">
+                    <description desc = "This Exhibition is Amazing"></description>
+                </div>
+                </div>
+            </div>
+            </Transition>
+            <div id="aninumber">
+                <br>
+                <p>Give this Exhibition a Rating from 0 - 100</p>
+                <input v-model.number="number" type="number" step="1">
+                <p>{{ animatedNumber }}</p>
+            </div>
             <div class="button">
                 <a href="Online Gallery Home.html">Home</a>
             </div>
@@ -56,8 +74,57 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="Online Gallery Script.js"></script>
+        <script src="Online Gallery Script.js">
+        </script>
+        <script>
+            new Vue ({
+                el: '#app',
+                components: {
+                    'description': {props:['desc'], template: '<p>{{desc}}</p>', href: 'Online Gallery.css'}
+                }
+            })
+
+            new Vue ({
+                el: '#transition',
+                data: {
+                    show: true
+                }
+            })
+
+            new Vue({
+  el: '#aninumber',
+  data: {
+    number: 0,
+    tweenedNumber: 0
+  },
+  computed: {
+    animatedNumber: function() {
+      return this.tweenedNumber.toFixed(0);
+    }
+  },
+  watch: {
+    number: function(newValue) {
+      gsap.to(this.$data, { duration: 0.5, tweenedNumber: newValue });
+    }
+  }
+})
+        </script>
+        <style>
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+  }
+  
+  .slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+        </style>
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
     </body>
 </html>
